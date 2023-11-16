@@ -10,7 +10,7 @@ export default {
 
  data() {
     return {
-       title: 'A 1000 Channels map prototype'
+       title: 'ORTE map client'
     }
   },
   head() {

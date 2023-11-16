@@ -9,32 +9,26 @@
       background-color: rgba(255,255,255,0.8);
    }
    .bg-a100c-1-splash {
-      background: rgb(111,80,80);
-      background: linear-gradient(90deg, rgba(80,80,80,0.9) 0%, rgba(197,197,197,0.9) 48%, rgba(80,80,80,0.9) 100%);
+      background: rgb(40,50,60);
     }
     .bg-a100c-1-splash-image {
       background-image: var(--background-image);
       background-size: cover;
    }
    .bg-a100c-1-hover {
-      background: rgb(111,80,80);
-      background: linear-gradient(90deg, rgba(111,80,80,1) 0%, rgba(223,214,185,1) 48%, rgba(146,153,101,1) 100%);
+      background: rgb(40,50,60);
    }
    .bg-a100c-1-button {
-      background: rgb(111,80,80);
-      background: linear-gradient(90deg, rgba(111,80,80,1) 0%, rgba(223,214,185,1) 48%, rgba(146,153,101,1) 100%);
+      background: rgb(40,50,60);
    }
   .bg-a100c-1 {
-       background: rgb(111,80,80);
-      background: linear-gradient(90deg, rgba(240,235,227,0.5)  0%, rgba(146,153,101,0.5) 48%, rgba(111,80,80,0.5)100%);
+       background: rgb(40,50,60);
    }
    .bg-a100c-2 {
-       background: rgb(111,80,80);
-      background: linear-gradient(90deg, rgba(111,80,80,0.5) 0%, rgba(240,235,227,0.85) 48%, rgba(146,153,101,0.5) 100%);
+       background: rgb(40,50,60);
    }
    .bg-a100c-3 {
-         background: rgb(111,80,80);
-      background: linear-gradient(90deg, rgba(146,153,101,0.5) 0%, rgba(111,80,80,0.5)  48%, rgba(240,235,227,0.5) 100%);
+         background: rgb(40,50,60);
    }
    .text-color {
       color: #373030
@@ -95,7 +89,7 @@
             <span v-else>We are developing a web map, that can easily be generated and published on the web. You will not need server side technologies for that, just a simple webspace. This prototype is work in progress.</span>
           </p>
           <p class="mt-4 pt-4 text-gray-800">
-            <nuxt-link :to="{ path: '/main', hash:'map', query: { layer: this.custom_data_url }}" class="bg-red-400 bg-a100c-1-button text-white text-center px-4 py-2 rounded-lg" id="jump">Check it out</nuxt-link>
+            <nuxt-link :to="{ path: '/main', hash:'map', query: { layer: this.custom_data_url }}" class="bg-red-400 bg-a100c-1-button text-white text-center px-4 py-2 rounded-lg" id="jump">Open Map</nuxt-link>
           </p>
           <p class="mt-4 pt-4 text-gray-800">
             <span v-if="this.data.teaser" v-html="this.data.teaser"></span>
@@ -104,15 +98,7 @@
         </div>
         <div class="mt-4 bg-white text-small shadow sm:rounded-lg px-8 py-4 md:px-8 lg:px-8">
           <p class="mt-3 text-gray-600">
-            This demo map is provided by A thousand channels
-          <p class="mt-3 text-gray-600">
-            Give us a shout if you have questions, need help or want to support us. Please visit our <a href="https://www.a-thousand-channels.xyz/" style="text-decoration: none; background-image: linear-gradient(120deg, #fde68a 0, #fde68a 100%); background-repeat: no-repeat; background-size: 100% 0.4em; background-position: 0 100%">Website</a>.
-            We always are very happy about feedback and contributions :)
-          </p>
-          <p class="mt-3">
-            <a href="https://www.a-thousand-channels.xyz/" target="_blank" style="text-decoration: none; background-image: linear-gradient(120deg, #fde68a 0, #fde68a 100%); background-repeat: no-repeat; background-size: 100% 0.4em; background-position: 0 100%">
-              A Thousand Channels – a queer 🏳️‍🌈 mapping 🌎 platform 🎁
-            </a>
+            This map client renders content from <a class="border-b" href="https://orte.link">ORTE backend</a>. 2023
           </p>
         </div>
       </div>
