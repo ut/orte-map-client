@@ -1,0 +1,76 @@
+name: Testing and deployment
+
+on: [push]
+
+jobs:
+  cypress-e2e:
+    runs-on: ubuntu-latest
+    name: Cypress e2e testing
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16        
+      # install dependencies
+      - name: Install cypress dependencies 📦
+        uses: cypress-io/github-action@v5
+        with:
+          # just perform install
+          runTests: false
+      # install nuxt dependencies
+      - name: Install nuxt dependencies 📦
+        run: yarn
+      # generate static files
+      - name: Generate the app 🔩
+        run: yarn run generate
+      # run app
+      - name: Start the app 🏁
+        run: yarn start &
+      # run test
+      - name: Cypress run 🤖
+        uses: cypress-io/github-action@v5
+        with:
+          install: false
+          record: false
+          wait-on: 'http://localhost:3000'
+          config-file: cypress.config.js
+        env:
+          DEBUG: '@cypress/github-action'
+  deploy-run:
+    runs-on: ${{ matrix.os }}
+    name: Deploy
+    needs: cypress-e2e
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Setup node env
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Print node-version
+        run: node -v
+
+      - name: Install dependencies 📦
+        run: yarn
+
+      - name: Generate 🔩
+        run: yarn run generate
+        env:
+          PUBLIC_PATH: '/a1000c-map-client/'
+
+      - name: Deploy 🏁
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
