@@ -9,7 +9,7 @@ export default {
 
   publicPath: process.env.PUBLIC_PATH || '/',
 
-  defaultDataUrl: '',
+  defaultDataUrl: 'https://orte.link/public/maps/an-orte-reference-map/layers/orte-reference-map-layer',
   localDataUrl: '/_content/data',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -25,8 +25,8 @@ export default {
       { name: 'msapplication-TileColor', content: '#ffffff' }
     ],
     link: [
-      { rel: 'manifest', href: '/site.webmanifest' },
-      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: "#5bbad5" }
+      { rel: 'manifest', href: '/favicon/site.webmanifest' },
+      { rel: 'mask-icon', href: '/favicon/safari-pinned-tab.svg', color: "#5bbad5" }
     ]
   },
 

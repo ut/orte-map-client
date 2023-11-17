@@ -138,19 +138,17 @@ export default {
             { hid: 'og:title', name: 'og:title', content: this.data.title || this.title },
             { hid: 'description', name: 'description', content: this.data.subtitle || 'This is the demo version of a web map, that can easily be generated and published on the web.' },
             { hid: 'og:description', name: 'og:description', content: this.data.subtitle ||  'This is the demo version of a web map, that can easily be generated and published on the web.' },
-            { name: 'og:image', content: this.data.image_link || 'https://a-thousand-channels.github.io/a1000c-map-client/a-thousand-channels--logo-variant-a--short.png'
-            },
+            { name: 'og:image', content: this.data.image_link || 'https://orte.link/ORTE-icon.png'},
             { name: 'format-detection', content: 'telephone=no' },
             { name: 'theme-color', content: '#ffffff' },
             { name: 'msapplication-TileColor', content: '#ffffff' }
       ],
       link: [
-        { hid: 'icon', rel: 'icon', type: 'image/x-icon', href: this.data.favicon_link || '/favicon.ico' },
-        { hid: 'apple-touch-icon', rel: 'apple-touch-icon', sizes: '120x120', href: this.data.favicon_link || '/apple-touch-icon.png' },
-        { hid: 'icon-32', rel: 'icon', type: 'image/png', sizes: "32x32", href: this.data.favicon_link || '/favicon-32x32.png' },
-        { hid: 'icon-16', rel: 'icon', type: 'image/png', sizes: "16x16", href: this.data.favicon_link ||  '/favicon-16x16.png' }
+        { hid: 'icon', rel: 'icon', type: 'image/x-icon', href: this.data.favicon_link || '/favicon/favicon.ico' },
+        { hid: 'apple-touch-icon', rel: 'apple-touch-icon', sizes: '120x120', href: this.data.favicon_link || '/favicon/apple-touch-icon.png' },
+        { hid: 'icon-32', rel: 'icon', type: 'image/png', sizes: "32x32", href: this.data.favicon_link || '/favicon/favicon-32x32.png' },
+        { hid: 'icon-16', rel: 'icon', type: 'image/png', sizes: "16x16", href: this.data.favicon_link ||  '/favicon/favicon-16x16.png' }
       ]
-
     }
   },
   watch: {
