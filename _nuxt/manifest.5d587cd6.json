@@ -1,0 +1,10 @@
+{
+  "name": "ORTE-map-client",
+  "short_name": "ORTE-map-client",
+  "description": "A map client, based on the prototype for the A thousand channels project w/Nuxt.js v2",
+  "icons": [],
+  "start_url": "/ORTE-map-client/?standalone=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "lang": "en"
+}
