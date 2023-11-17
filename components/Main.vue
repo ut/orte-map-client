@@ -112,17 +112,10 @@
     #list #list_inner {
       width: 97%;
     }
-   .bg-a100c-1 {
-       background: rgb(111,80,80);
-      background: linear-gradient(90deg, rgba(240,235,227,0.5)  0%, rgba(146,153,101,0.5) 48%, rgba(111,80,80,0.5)100%);
-   }
-   .bg-a100c-2 {
-       background: rgb(111,80,80);
-      background: linear-gradient(90deg, rgba(111,80,80,0.5) 0%, rgba(240,235,227,0.85) 48%, rgba(146,153,101,0.5) 100%);
-   }
+   .bg-a100c-1,
+   .bg-a100c-2,
    .bg-a100c-3 {
-         background: rgb(111,80,80);
-      background: linear-gradient(90deg, rgba(146,153,101,0.5) 0%, rgba(111,80,80,0.5)  48%, rgba(240,235,227,0.5) 100%);
+       background: rgb(40,50,60);
    }
    .bg-a100c-dark {
 
@@ -210,6 +203,9 @@
     #map_map .leaflet-bottom.leaflet-left svg {
      /* width: 32px;
       height: 35px; */
+    }
+    #map_map .leaflet-control-layers label {
+      color: white;
     }
     #map_map .leaflet-touch .leaflet-control-layers-toggle {
       width: 35px;
@@ -674,8 +670,7 @@ export default {
           */
           var baseMaps = {
               "Basemap": simple_basemap_layer,
-              "Basemap (dark)": simple_basemap_dark,
-              "OpenStreetMap": openstreetmap_layer
+              "OpenStreetMap": openstreetmap_layer,
           };
           console.log(baseMaps)
 
