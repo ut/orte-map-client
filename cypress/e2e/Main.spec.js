@@ -1,7 +1,7 @@
 
 describe('Main > Map', () => {
 
-  const project_title = 'Queer Poems'
+  const project_title = 'ORTE Reference Map Layer'
 
   before(() => {
     cy.visit('http://localhost:3000/')

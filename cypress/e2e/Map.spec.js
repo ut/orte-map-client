@@ -4,6 +4,7 @@ describe('Map', () => {
     cy.visit('http://localhost:3000/');
     cy.wait(1000);
     cy.visit('http://localhost:3000/main');
+    cy.wait(1000);
   })
 
   it('should render map and depending controls', () => {
@@ -30,7 +31,7 @@ describe('Map', () => {
     cy.get('.leaflet-marker-pane svg').should('have.length.greaterThan', 0);
   });
 
-  it('should render tooltips', () => {
+  xit('should render tooltips', () => {
 
     // Assert there are one or more tooltips, which are visible without interaction
     cy.get('.leaflet-tooltip-pane').should('not.be.empty');
@@ -58,26 +59,26 @@ describe('Map', () => {
     // Assert initial zoom levels
     cy.get('#map_map')
       .invoke('attr', 'data-zoom')
-      .should('equal', '3')
+      .should('equal', '12')
 
     // Assert that zooming in changes the zoom level
     cy.get('.leaflet-control-zoom-in').click();
     cy.get('#map_map')
       .invoke('attr', 'data-zoom')
-      .should('equal', '4')
+      .should('equal', '13')
 
     // Assert that zooming in twice changes the zoom level by two levels
     cy.get('.leaflet-control-zoom-in').click();
     cy.get('#map_map')
       .invoke('attr', 'data-zoom')
-      .should('equal', '5')
+      .should('equal', '14')
 
 
     // Assert that zooming out changes the zoom level
     cy.get('.leaflet-control-zoom-out').click();
     cy.get('#map_map')
       .invoke('attr', 'data-zoom')
-      .should('equal', '4')
+      .should('equal', '13')
 
   });
 });

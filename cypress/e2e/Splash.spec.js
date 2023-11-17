@@ -5,11 +5,11 @@ describe('Splash', () => {
     cy.visit('http://localhost:3000/')
   })
   it('displays splash page ', () => {
-    cy.get('h2').contains('Queer Poems')
-    cy.get('a#jump').contains('Check it out')
+    cy.get('h2').contains('ORTE Reference Map Layer')
+    cy.get('a#jump').contains('Open Map')
   })
   it('on button click loads map ', () => {
-    cy.contains('Check it out').click()
+    cy.contains('Open Map').click()
     cy.url().should('eq', 'http://localhost:3000/main#map')
   })
 })
